@@ -1,6 +1,5 @@
 package github.io.NiceLeader.movielibrary;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -27,10 +26,12 @@ public class MovieRepository {
     }
 
 
-    public void save(List<Movie> movies) {
+    public void add(List<Movie> movies) {
         movies.forEach(movie -> jdbcTemplate
                 .update("INSERT INTO  movielibrary.movie(name, rating) VALUES (?, ?)",
                 movie.getName(), movie.getRating()
         ));
+
     }
+
 }

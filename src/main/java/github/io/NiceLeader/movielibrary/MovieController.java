@@ -21,6 +21,6 @@ public class MovieController {
 
     @PostMapping("")
     public void add(@RequestBody List<Movie> movies) {
-        movieRepository.save(movies);
+        movieRepository.add(movies);
     }
 }
