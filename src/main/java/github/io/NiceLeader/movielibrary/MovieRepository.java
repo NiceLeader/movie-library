@@ -28,7 +28,8 @@ public class MovieRepository {
 
 
     public void save(List<Movie> movies) {
-        movies.forEach(movie -> jdbcTemplate.update("INSERT INTO  movielibrary.movie (name, rating) VALUES (?, ?)",
+        movies.forEach(movie -> jdbcTemplate
+                .update("INSERT INTO  movielibrary.movie(name, rating) VALUES (?, ?)",
                 movie.getName(), movie.getRating()
         ));
     }
